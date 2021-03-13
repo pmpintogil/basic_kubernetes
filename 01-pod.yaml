@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mi-pod-solo
+  namespace: mi-ns
+  labels:
+    role: mi-rol-pod
+spec:
+  containers:
+    - name: hola-container
+      image: gcr.io/google-samples/hello-app:1.0
+      ports:
+        - name: hola-port
+          containerPort: 8080
+          protocol: TCP

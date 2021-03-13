@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mi-pod
+  namespace: mi-ns
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        role: mi-rol
+
+    spec:  
+      containers:
+      - name: web
+        image: gcr.io/google-samples/hello-app:1.0
+        ports:
+        - name: web
+          containerPort: 8080
+          protocol: TCP
